@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Always · A Little Spell of Love</title>
+  <meta name="description" content="A magical, romantic place made just for you." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Tangerine:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <!-- Floating golden dust -->
+  <canvas id="dust" aria-hidden="true"></canvas>
+
+  <!-- Drifting candles -->
+  <div class="candles" aria-hidden="true">
+    <div class="candle" style="--x: 8%;  --d: 0s;   --s: 1.0;"></div>
+    <div class="candle" style="--x: 22%; --d: -3s;  --s: 0.8;"></div>
+    <div class="candle" style="--x: 40%; --d: -6s;  --s: 1.1;"></div>
+    <div class="candle" style="--x: 63%; --d: -2s;  --s: 0.9;"></div>
+    <div class="candle" style="--x: 80%; --d: -5s;  --s: 1.05;"></div>
+    <div class="candle" style="--x: 92%; --d: -8s;  --s: 0.75;"></div>
+  </div>
+
+  <!-- ───────────────────────── HERO ───────────────────────── -->
+  <header class="hero">
+    <p class="hero__eyebrow">— a spell cast just for you —</p>
+    <h1 class="hero__title">Always</h1>
+    <p class="hero__subtitle">
+      "After all this time?"<br /><span>"Always."</span>
+    </p>
+    <p class="hero__dedication">
+      For the one who holds my heart under an Invisibility Cloak of love.
+    </p>
+    <a class="hero__scroll" href="#memories">Open the spellbook ✦</a>
+  </header>
+
+  <main>
+    <!-- ─────────────────── PHOTO GALLERY ─────────────────── -->
+    <section id="memories" class="section">
+      <h2 class="section__title">The Great Hall of Memories</h2>
+      <p class="section__hint">Moving portraits of us — every picture a charm.</p>
+      <div id="gallery" class="gallery">
+        <p class="empty" id="gallery-empty">Summoning our memories…</p>
+      </div>
+    </section>
+
+    <!-- ─────────────────── CRINGE SONGS ─────────────────── -->
+    <section id="songs" class="section section--center">
+      <h2 class="section__title">The Cringe Spellbook</h2>
+      <p class="section__hint">Press the enchantment to conjure a random (gloriously cringe) song.</p>
+
+      <button id="cringe-btn" class="spell-button" type="button">
+        <span class="spell-button__rune">🎵</span>
+        <span class="spell-button__label">Cringe Songs</span>
+      </button>
+
+      <div id="now-playing" class="now-playing" hidden>
+        <span class="now-playing__label">Now bewitching the air with</span>
+        <span id="now-playing-title" class="now-playing__title"></span>
+        <audio id="audio" controls></audio>
+      </div>
+    </section>
+
+    <!-- ─────────────────── COMPLAINTS / OWL POST ─────────────────── -->
+    <section id="owlpost" class="section">
+      <h2 class="section__title">Owl Post</h2>
+      <p class="section__hint">
+        Send a complaint, a confession, or a tiny grievance. An owl will keep it safe forever.
+      </p>
+
+      <form id="complaint-form" class="parchment">
+        <label class="parchment__label" for="complaint-message">Your message to the void of love</label>
+        <textarea
+          id="complaint-message"
+          class="parchment__textarea"
+          placeholder="Dear you, I must lodge a formal complaint about how much I miss you…"
+          maxlength="2000"
+          required
+        ></textarea>
+        <button type="submit" class="ink-button">Send by Owl ✦</button>
+      </form>
+
+      <div id="owl-list" class="owl-list">
+        <p class="empty" id="owl-empty">No owls have arrived yet…</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Made with a love potion (and a little code). Mischief managed. ⚡</p>
+    <p><a href="#" id="lock-link" class="lock-link">🔒 Seal the portrait hole</a></p>
+  </footer>
+
+  <!-- ─────────────────── "FROM:" MODAL ─────────────────── -->
+  <div id="from-modal" class="modal" hidden>
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__card" role="dialog" aria-modal="true" aria-labelledby="from-modal-title">
+      <h3 id="from-modal-title" class="modal__title">One last charm…</h3>
+      <p class="modal__text">Whom shall the owl say this is from?</p>
+      <input
+        id="from-input"
+        class="modal__input"
+        type="text"
+        placeholder="From:"
+        maxlength="120"
+        autocomplete="off"
+      />
+      <div class="modal__actions">
+        <button type="button" class="ink-button ink-button--ghost" data-close>Cancel</button>
+        <button type="button" class="ink-button" id="from-confirm">Send it ✦</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast" hidden></div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

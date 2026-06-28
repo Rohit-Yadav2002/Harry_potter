@@ -1,0 +1,7 @@
+Drop your photos in THIS folder (jpg, jpeg, png, gif, webp, avif, bmp).
+
+They will automatically appear in "The Great Hall of Memories" on the website.
+- Running locally: just add the file and refresh the page.
+- Live site: add the file, commit, and push to GitHub — it redeploys and shows up.
+
+Tip: name them in the order you want them shown, e.g. 01-first-date.jpg, 02-trip.jpg

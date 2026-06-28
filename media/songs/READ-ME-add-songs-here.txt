@@ -1,0 +1,5 @@
+Drop your songs in THIS folder (mp3, m4a, ogg, wav, aac, flac, opus).
+
+Clicking the "Cringe Songs" button on the website plays a RANDOM song from here.
+- Running locally: just add the file (no restart needed).
+- Live site: add the file, commit, and push to GitHub — it redeploys and picks it up.
